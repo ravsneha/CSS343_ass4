@@ -1,21 +1,11 @@
 # Movie Store
-
-## Replace all TODO with actual information
-
-Author(s): TODO
-
+Author: Sneha Ravichandran
 GitHub URL: TODO
-
-Expected Mark: TODO
+Expected Mark: 80
 
 ## Checklist
-
-Development Platform: TODO
-
-Tested on CSS Linux Lab: TODO (Should be Yes, assignment requirement)
-
-Tested on Travis: TODO (Yes or No)
-
+Development Platform: CLion
+Tested on CSS Linux Lab: YES
 cpplint messages: TODO (Explain all messages and why you are ignoring them)
 
 cppcheck messages: TODO (Explain all messages and why you are ignoring them)
@@ -23,7 +13,6 @@ cppcheck messages: TODO (Explain all messages and why you are ignoring them)
 valgrind messages: TODO (Explain any memory lost or state if none)
 
 ## Command Functionality Checklist
-
 For each command, state Full, Partial or None to indicate 
 if it has been fully, partially or not implemented at all.
 Explain any partial implementations.
@@ -34,7 +23,6 @@ Borrow: TODO
 Return: TODO
 
 ## Location of error message or functionality
-
 State the file and function where the information can be found
 
 invalid command code: TODO
@@ -70,42 +58,3 @@ explain borrowing a movie that has 0 stock: TODO
 explain returning a movie that customer has not checked out: TODO
 
 any static_cast or dynamic_cast used: TODO
-
-
-
-// TODO optional ASCII art
-
-https://codegolf.stackexchange.com/questions/16587/print-a-smiley-face
-
-```
-
-                            $$$$$$$$$$$$$$$$$$$$
-                       $$$$$$$$$$$$$$$$$$$$$$$$$$$
-                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$         $$   $$$$$
-    $$$$$$        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$$$$$$$$
- $$ $$$$$$      $$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$       $$$$$$$$
- $$$$$$$$$     $$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$    $$$$$$$$
-   $$$$$$$    $$$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$$$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$$$$$  $$$$$$
-    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$
-     $$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$$
-    $$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$$
-    $$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ $$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   $$$$$$$$$$$$$$$$$$
-   $$$$$$$$$$$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$$$$$$$$$
-  $$$$       $$$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$      $$$$
-             $$$$$     $$$$$$$$$$$$$$$$$$$$$$$$$         $$$
-               $$$$          $$$$$$$$$$$$$$$           $$$$
-                $$$$$                                $$$$$
-                 $$$$$$      $$$$$$$$$$$$$$        $$$$$
-                   $$$$$$$$     $$$$$$$$$$$$$   $$$$$$$
-                      $$$$$$$$$$$  $$$$$$$$$$$$$$$$$
-                         $$$$$$$$$$$$$$$$$$$$$$
-                                 $$$$$$$$$$$$$$$
-                                     $$$$$$$$$$$$
-                                      $$$$$$$$$$$
-                                       $$$$$$$$
-
-
-```
-
