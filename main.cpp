@@ -15,8 +15,8 @@ using namespace std;
 
 int main() {
     Store a;
-    a.readMovieFile("test.txt");
-    a.readCustomerFile("test.txt");
-    a.readCommandsFile("test.txt");
+    a.readMovieFile("data4movies.txt");
+    a.readCustomerFile("data4customers.txt");
+    a.readCommandsFile("data4commands.txt");
     return 0;
 }
