@@ -17,10 +17,10 @@ For each command, state Full, Partial or None to indicate
 if it has been fully, partially or not implemented at all.
 Explain any partial implementations.
 
-Inventory: TODO
-History: TODO
-Borrow: TODO
-Return: TODO
+Inventory: FULL
+History: FULL
+Borrow: FULL
+Return: FULL
 
 ## Location of error message or functionality
 State the file and function where the information can be found
