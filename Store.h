@@ -11,16 +11,14 @@
 #define ASS_4_STORE_H
 
 #include <iostream>
+#include <vector>
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iterator>
-#include "Classic.h"
-#include "Drama.h"
-#include "Comedy.h"
+#include "Movie.h"
 #include "Customer.h"
-#include "HashTable.cpp"
-
+#include "HashTable.h"
 using namespace std;
 
 class Store {
@@ -77,7 +75,7 @@ public:
     //read movie file
     void readMovieFile(string a);
 
-
+//protected global vars
 protected:
     HashTable<int, Customer> customers;
     HashTable<int, vector<string>> *history;

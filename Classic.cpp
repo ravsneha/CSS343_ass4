@@ -43,7 +43,7 @@ Classic::Classic(int s, int r, string type, string title, string d,
 Classic::~Classic() {}
 
 bool Classic::operator<(Classic &a) const {
-    Classic temp = static_cast<Classic &>(a);
+    Classic temp = a;
     if ((releaseMonth + release) <
         (temp.releaseMonth + temp.release)) {
         if (mainActor < temp.mainActor) return true;

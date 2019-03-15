@@ -25,7 +25,9 @@ Store::~Store() {
     classic.clear();
     comedy.clear();
     drama.clear();
-    delete classic, comedy, drama;
+    delete &classic;
+    delete &comedy;
+    delete &drama;
 }
 
 //////ADDS CUSTOMERS////////
@@ -54,8 +56,8 @@ void Store::displayCustomers() {
 ///////FINDS CUSTOMERS AND RETURNS STRING////////
 string Store::findCustomer(int i) {
     if (customers.contains(i)) {
-        return customers.getVal(i)->getFName() + " "
-               + customers.getVal(i)->getLName();
+        return customers.getVal(i).getFName() + " "
+               + customers.getVal(i).getLName();
     }
 }
 
@@ -134,7 +136,7 @@ string Store::movieToString(Movie *a) {
         retVal += a->getDirector() + ", ";
         retVal += a->getTitle() + ", ";
         retVal += a->getMainActor() + " ";
-        retVal += a->getReleaseMonth() + " " + a.getRelease();
+        retVal += a->getReleaseMonth() + " " + a->getRelease();
     } else {
         retVal += a->getType() + ", ";
         retVal += a->getStock() + ", ";
@@ -161,8 +163,8 @@ void Store::displayInventory() {
 //////DISPLAYS CUSTOMER HISTORY////////
 //prints out customer's history
 void Store::displayCustomerHistory(int id) {
-    vector<string> *temp = history->getVal(id);
-    for (int i = 0; i < temp->size(); i++) {
+    vector<string> temp = history->getVal(id);
+    for (int i = 0; i < temp.size(); i++) {
         //cout << temp[i] << endl; was not printing correctly
     }
 }
@@ -441,7 +443,7 @@ void Store::readCommandsFile(string a) {
                 getline(line, title, ' ');
                 getline(line, rel);
                 if (exists(title, comedy)) {
-                    customers.getVal(stoi(cid))->addHistory(tmpLine);
+                    customers.getVal(stoi(cid)).addHistory(tmpLine);
                     int index = getIndex(title, comedy);
                     borrowMovie(comedy[index]);
                 } else cout << "COMEDY MOVIE DNE AND CANNOT BE BORROWED" << endl;
@@ -449,7 +451,7 @@ void Store::readCommandsFile(string a) {
                 if (exists(title, drama)) {
                     getline(line, dir, ' ');
                     getline(line, title);
-                    customers.getVal(stoi(cid))->addHistory(tmpLine);
+                    customers.getVal(stoi(cid)).addHistory(tmpLine);
                     int index = getIndex(title, drama);
                     borrowMovie(drama[index]);
                 } else cout << "DRAMA MOVIE DNE AND CANNOT BE BORROWED" << endl;
@@ -457,7 +459,7 @@ void Store::readCommandsFile(string a) {
                 getline(line, relM, ' ');
                 getline(line, rel, ' ');
                 getline(line, ma);
-                customers.getVal(stoi(cid))->addHistory(tmpLine);
+                customers.getVal(stoi(cid)).addHistory(tmpLine);
                 int index = getIndexForClassics(ma, stoi(rel), stoi(relM));
                 if (index != -1)borrowMovie(classic[index]);
                 else cout << "CLASSIC MOVIE DNE AND CANNOT BE BORROWED" << endl;
@@ -472,7 +474,7 @@ void Store::readCommandsFile(string a) {
                 getline(line, title, ' ');
                 getline(line, rel);
                 if (exists(title, comedy)) {
-                    customers.getVal(stoi(cid))->addHistory(tmpLine);
+                    customers.getVal(stoi(cid)).addHistory(tmpLine);
                     int index = getIndex(title, comedy);
                     returnMovie(comedy[index]);
                 } else cout << "COMEDY MOVIE DNE AND CANNOT BE RETURNED" << endl;
@@ -480,7 +482,7 @@ void Store::readCommandsFile(string a) {
                 if (exists(title, drama)) {
                     getline(line, dir, ' ');
                     getline(line, title);
-                    customers.getVal(stoi(cid))->addHistory(tmpLine);
+                    customers.getVal(stoi(cid)).addHistory(tmpLine);
                     int index = getIndex(title, drama);
                     returnMovie(drama[index]);
                 } else cout << "DRAMA MOVIE DNE AND CANNOT BE RETURNED" << endl;
@@ -488,7 +490,7 @@ void Store::readCommandsFile(string a) {
                 getline(line, relM, ' ');
                 getline(line, rel, ' ');
                 getline(line, ma);
-                customers.getVal(stoi(cid))->addHistory(tmpLine);
+                customers.getVal(stoi(cid)).addHistory(tmpLine);
                 int index = getIndexForClassics(ma, stoi(rel), stoi(relM));
                 if (index != -1)returnMovie(classic[index]);
                 else cout << "CLASSIC MOVIE DNE AND CANNOT BE RETURNED" << endl;

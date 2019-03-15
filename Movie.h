@@ -10,12 +10,10 @@
 #ifndef ASS_4_MOVIE_H
 #define ASS_4_MOVIE_H
 
-#include <stack>
 #include <iostream>
 #include <fstream>
 #include <map>
 #include <utility>
-#include <vector>
 #include <string>
 
 using namespace std;
@@ -24,9 +22,6 @@ class Movie {
 public:
     //no arg constructor
     Movie();
-
-    //copy constructor
-    explicit Movie(Movie &m);
 
     //constructor for comedy and drama
     Movie(int s, int r, string type, string title, string d);

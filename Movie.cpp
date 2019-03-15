@@ -28,17 +28,6 @@ Movie::Movie() {
     this->director = "NA";
 }
 
-//copy constructor
-Movie::Movie(Movie &m) {
-    if (type != m.type) return; //checks type
-    stock = m.stock;
-    director = m.director;
-    title = m.title;
-    release = m.release;
-    mainActor = m.mainActor;
-    releaseMonth = m.releaseMonth;
-}
-
 //arg constructor (comedy and drama)
 Movie::Movie(int s, int r, string type, string title, string d) {
     stock = s;

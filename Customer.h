@@ -13,9 +13,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 #include "Movie.h"
-#include "Customer.h"
 
 using namespace std;
 

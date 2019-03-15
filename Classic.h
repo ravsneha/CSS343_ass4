@@ -17,6 +17,7 @@
 #include <utility>
 #include <vector>
 #include <string>
+#include "Classic.h"
 #include "Movie.h"
 
 using namespace std;
