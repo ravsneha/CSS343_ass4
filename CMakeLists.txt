@@ -1,12 +1,6 @@
-cmake_minimum_required(VERSION 3.5)
-project(moviestore)
+cmake_minimum_required(VERSION 3.13)
+project(ass_4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# have compiler give warnings, but not for signed/unsigned
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -Wextra -Wno-sign-compare")
-
-# need to load data files from current directory as cpp files
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
-
-add_executable(moviestore.exe main.cpp store_test.cpp)
+add_executable(ass_4 main.cpp Store.cpp Store.h Customer.cpp Customer.h MovieFactory.cpp MovieFactory.h Movie.cpp Movie.h Classic.cpp Classic.h Comedy.cpp Comedy.h Drama.cpp Drama.h HashTable.cpp)
