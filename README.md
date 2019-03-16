@@ -1,6 +1,6 @@
 # Movie Store
 Author: Sneha Ravichandran
-GitHub URL: TODO
+GitHub URL: https://github.com/2018WI343/store-ravsneha
 Expected Mark: 80
 
 ## Checklist
@@ -17,6 +17,7 @@ For each command, state Full, Partial or None to indicate
 if it has been fully, partially or not implemented at all.
 Explain any partial implementations.
 
+Note: Full implementation, however printing out for each command is not fully functional. 
 Inventory: FULL
 History: FULL
 Borrow: FULL
@@ -24,14 +25,22 @@ Return: FULL
 
 ## Location of error message or functionality
 State the file and function where the information can be found
+*all error messages are cout commands 
 
-invalid command code: TODO
+invalid command code: INVALID COMMAND - Store.cpp
 
-invalid movie type: TODO
+invalid movie type: MOVIE TYPE IS INVALID - Store.cpp
 
-invalid customer ID: TODO
+invalid customer ID: CUSTOMER ID IS INVALID
  
-invalid movie: TODO
+invalid movie: COMEDY MOVIE DNE AND CANNOT BE BORROWED
+               CLASSIC MOVIE DNE AND CANNOT BE BORROWED
+               DRAMA MOVIE DNE AND CANNOT BE BORROWED
+               
+               COMEDY MOVIE DNE AND CANNOT BE RETURNED
+               CLASSIC MOVIE DNE AND CANNOT BE RETURNED
+               DRAMA MOVIE DNE AND CANNOT BE RETURNED
+               
 
 factory classes: TODO
 
