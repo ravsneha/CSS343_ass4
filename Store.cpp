@@ -480,47 +480,44 @@ void Store::readCommandsFile(string a) {
                             int index = getIndex(title, comedy);
                             borrowMovie(comedy[index]);
                         } else cout << "COMEDY MOVIE DNE AND CANNOT BE BORROWED" << endl;
-                    } else cout << "MEDIA TYPE IS INVALID" << endl;
+                    } else cout << "MOVIE TYPE IS INVALID" << endl;
+                } else cout << "MEDIA TYPE IS INVALID" << endl;
             } else cout << "CUSTOMER ID IS INVALID" << endl;
-        } else cout << "MOVIE DNE AND CANNOT BE BORROWED" << endl;
-    } else if (command == "R") {
-        getline(line, cid, ' ');
-        getline(line, mediaT, ' ');
-        getline(line, movieT, ' ');
-        if (movieT == "F") {
-            getline(line, title, ' ');
-            getline(line, rel);
-            if (exists(title, comedy)) {
-                customers.getVal(stoi(cid)).addHistory(tmpLine);
-                int index = getIndex(title, comedy);
-                returnMovie(comedy[index]);
-            } else cout << "COMEDY MOVIE DNE AND CANNOT BE RETURNED" << endl;
-        } else if (movieT == "D") {
-            if (exists(title, drama)) {
-                getline(line, dir, ' ');
-                getline(line, title);
-                customers.getVal(stoi(cid)).addHistory(tmpLine);
-                int index = getIndex(title, drama);
-                returnMovie(drama[index]);
-            } else cout << "DRAMA MOVIE DNE AND CANNOT BE RETURNED" << endl;
-        } else if (movieT == "C") {
-            getline(line, relM, ' ');
-            getline(line, rel, ' ');
-            getline(line, ma);
-            customers.getVal(stoi(cid)).addHistory(tmpLine);
-            int index = getIndexForClassics(ma, stoi(rel), stoi(relM));
-            if (index != -1)returnMovie(classic[index]);
-            else cout << "CLASSIC MOVIE DNE AND CANNOT BE RETURNED" << endl;
-        } else {
-            cout << "MOVIE DNE AND CANNOT BE RETURNED" << endl;
-        }
-    } else {
-        cout << "INVALID COMMAND" << endl;
-    }
-
-}
-
-fileDirectory.
-
-close();
+        } else if (command == "R") {
+            getline(line, cid, ' ');
+            if (customers.contains(stoi(cid))) {
+                getline(line, mediaT, ' ');
+                if (mediaT == "D") {
+                    getline(line, movieT, ' ');
+                    if (movieT == "C") {
+                        getline(line, relM, ' ');
+                        getline(line, rel, ' ');
+                        getline(line, ma);
+                        customers.getVal(stoi(cid)).addHistory(tmpLine);
+                        int index = getIndexForClassics(ma, stoi(rel), stoi(relM));
+                        if (index != -1)returnMovie(classic[index]);
+                        else cout << "CLASSIC MOVIE DNE AND CANNOT BE RETURNED" << endl;
+                    } else if (movieT == "D") {
+                        if (exists(title, drama)) {
+                            getline(line, dir, ',');
+                            getline(line, wasteOfSpace, ' ');
+                            getline(line, title, ',');
+                            customers.getVal(stoi(cid)).addHistory(tmpLine);
+                            int index = getIndex(title, drama);
+                            returnMovie(drama[index]);
+                        } else cout << "DRAMA MOVIE DNE AND CANNOT BE RETURNED" << endl;
+                    } else if (movieT == "F") {
+                        getline(line, title, ',');
+                        getline(line, wasteOfSpace, ' ');
+                        getline(line, rel);
+                        if (exists(title, comedy)) {
+                            customers.getVal(stoi(cid)).addHistory(tmpLine);
+                            int index = getIndex(title, comedy);
+                            returnMovie(comedy[index]);
+                        } else cout << "COMEDY MOVIE DNE AND CANNOT BE RETURNED" << endl;
+                    } else cout << "MOVIE TYPE IS INVALID" << endl;
+                } else cout << "MEDIA TYPE IS INVALID" << endl;
+            } else cout << "CUSTOMER ID IS INVALID" << endl;
+        } else cout << "INVALID COMMAND" << endl;
+    fileDirectory.close();
 }
